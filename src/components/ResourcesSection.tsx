@@ -117,20 +117,32 @@ const ResourcesSection: React.FC = () => {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <button className={`flex-1 py-3 px-4 bg-gradient-to-r ${resource.color} text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-200 flex items-center justify-center gap-2`}>
-                    {resource.urgent ? (
-                      <>
-                        <Phone className="h-4 w-4" />
-                        Get Help Now
-                      </>
-                    ) : (
-                      <>
-                        <ExternalLink className="h-4 w-4" />
-                        Access Resources
-                      </>
-                    )}
-                  </button>
+                
+
+
+
+                  <div className="flex flex-col sm:flex-row gap-3">
+  <button  className={`flex-1 py-3 px-4 bg-gradient-to-r ${resource.color} text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-200 flex items-center justify-center gap-2`}
+    onClick={() => {
+      if (resource.urgent) {
+        window.location.href = `tel:${resource.phone}`;
+      }
+    }}
+  >
+    {resource.urgent ? (
+      <>
+        <Phone className="h-4 w-4" />
+        Get Help Now
+      </>
+    ) : (
+      <>
+        <ExternalLink className="h-4 w-4" />
+        Access Resources
+      </>
+    )}
+  </button>
+</div>
+
                   
                   {!resource.urgent && (
                     <button className="sm:w-auto px-4 py-3 border border-gray-300 text-gray-700 rounded-xl font-medium hover:bg-gray-50 transition-colors duration-200 flex items-center justify-center gap-2">
