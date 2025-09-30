@@ -117,6 +117,7 @@ const ResourcesSection: React.FC = () => {
                 </div>
 
                 {/* Action Buttons */}
+               
                 <div className="flex flex-col sm:flex-row gap-3">
                   <button className={`flex-1 py-3 px-4 bg-gradient-to-r ${resource.color} text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-200 flex items-center justify-center gap-2`}>
                     {resource.urgent ? (
